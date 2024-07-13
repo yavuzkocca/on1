@@ -8,7 +8,8 @@
     "build:turbo": "cd ../.. && yarn build",
     "build:analyze": "ANALYZE=true yarn build",
     "start": "next start",
-    "postinstall": "cd ../.. && yarn patch-package"
+    "postinstall": "cd ../.. && yarn patch-package",
+    "vercel-build": "yarn global add node-gyp-build"
   },
   "dependencies": {
     "@builder.io/partytown": "^0.6.4",
