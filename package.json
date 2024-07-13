@@ -63,7 +63,7 @@
     "clean:native": "yarn clean && rm -rf apps/storybook-react-native/android && rm -rf apps/storybook-react-native/ios && rm -rf apps/expo/android && rm -rf apps/expo/ios && rm -rf apps/expo/.expo",
     "test:expo": "cd apps/expo && yarn test",
     "upgrade:design-system": "yarn up '@showtime-xyz/universal.*'",
-    "vercel-build": "yarn global add node-gyp sharp"
+    "vercel-build": "yarn global add node-gyp-build"
   },
   "resolutions": {
     "babel-preset-expo": "9.1.0",
