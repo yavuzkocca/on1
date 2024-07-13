@@ -1,5 +1,5 @@
 // import Iron from "@hapi/iron";
-// import { captureException } from "@sentry/nextjs";
+
 import { useCallback, useRef } from "react";
 
 import * as accessTokenStorage from "app/lib/access-token";
@@ -83,15 +83,7 @@ export function useAccessTokenManager() {
       } catch (error: any) {
         isRefreshing.current = false;
 
-        // accessTokenStorage.deleteAccessToken();
-        // refreshTokenStorage.deleteRefreshToken();
-        // setLogout(Date.now().toString());
-
-        // captureException(error, {
-        //   tags: {
-        //     failed_silent_refresh: "use-access-token-manager.ts",
-        //   },
-        // });
+        
 
         throw `Failed to refresh tokens. ${
           typeof error === "string" ? error : error.message || ""

@@ -1,6 +1,5 @@
 import * as React from "react";
 
-import { captureException } from "app/lib/sentry";
 
 import { Fallback } from "./fallback";
 
@@ -48,7 +47,6 @@ export class ErrorBoundary extends React.Component<
 
   componentDidCatch(error: Error, info: React.ErrorInfo) {
     if (!this.props.disableCaptureException) {
-      captureException(error);
     }
     this.props.onError?.(error, info);
   }

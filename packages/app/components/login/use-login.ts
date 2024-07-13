@@ -1,8 +1,5 @@
 import { useCallback, useEffect, useRef } from "react";
 import { Platform } from "react-native";
-
-import { captureException } from "@sentry/nextjs";
-
 import { useAuth } from "app/hooks/auth/use-auth";
 import { useWalletLogin } from "app/hooks/auth/use-wallet-login";
 import { useStableBlurEffect } from "app/hooks/use-stable-blur-effect";
@@ -39,12 +36,6 @@ export const useLogin = (onLogin?: () => void) => {
     if (process.env.NODE_ENV === "development" || __DEV__) {
       console.error(error);
     }
-    captureException(error, {
-      tags: {
-        login_signature_flow: "use-login.ts",
-        login_magic_link: "use-login.ts",
-      },
-    });
   },
   []);
 

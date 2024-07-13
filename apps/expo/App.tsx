@@ -14,17 +14,11 @@ import { enableScreens } from "react-native-screens";
 import { growthbook } from "app/lib/growthbook";
 import { Logger } from "app/lib/logger";
 import { rudderConfig } from "app/lib/rudderstack/config";
-import { Sentry } from "app/lib/sentry";
 import { RootStackNavigator } from "app/navigation/root-stack-navigator";
 import { AppProviders } from "app/providers/app-providers";
 
 enableScreens(true);
 enableLayoutAnimations(false);
-Sentry.init({
-  dsn: process.env.SENTRY_DSN,
-  environment: process.env.STAGE,
-  enableInExpoDevelopment: false,
-});
 
 const scheme = `https://${process.env.NEXT_PUBLIC_WEBSITE_DOMAIN}/wsegue`;
 
@@ -113,7 +107,7 @@ function App() {
           try {
             await FastImage.clearMemoryCache();
             Logger.log("did receive memory warning and cleared");
-          } catch {}
+          } catch { }
         }
         clearFastImageMemory();
       }

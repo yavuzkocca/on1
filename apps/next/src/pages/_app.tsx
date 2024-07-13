@@ -43,11 +43,6 @@ if (typeof window !== "undefined") {
   window._frameTimestamp = null;
 }
 
-// Sentry.init({
-//   dsn: process.env.SENTRY_DSN,
-//   environment: process.env.STAGE,
-// });
-
 function App({ Component, pageProps, router }: AppProps) {
   const meta = pageProps.meta;
   const metaTags = meta ? (

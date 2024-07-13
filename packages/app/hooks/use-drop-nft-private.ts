@@ -7,7 +7,7 @@ import { useAlert } from "@showtime-xyz/universal.alert";
 
 import { useMatchMutate } from "app/hooks/use-match-mutate";
 import { Logger } from "app/lib/logger";
-import { captureException } from "app/lib/sentry";
+
 import { getFileMeta } from "app/utilities";
 
 export const MAX_FILE_SIZE = 50 * 1024 * 1024; // in bytes
@@ -320,8 +320,6 @@ export const useDropNFT = () => {
           "We are currently experiencing a lot of usage. Please try again in one hour!"
         );
       }
-
-      captureException(e);
     }
   };
   //END Of UseDropFunction

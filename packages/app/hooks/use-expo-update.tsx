@@ -5,7 +5,6 @@ import * as Updates from "expo-updates";
 import { useSnackbar } from "@showtime-xyz/universal.snackbar";
 
 import { usePlatformBottomHeight } from "app/hooks/use-platform-bottom-height";
-import { captureException } from "app/lib/sentry";
 
 // import { MMKV } from "react-native-mmkv";
 
@@ -48,7 +47,7 @@ export function useExpoUpdate() {
           }
         }
       } catch (error) {
-        captureException(error);
+
       }
     },
     // just use snackbar to prompt once

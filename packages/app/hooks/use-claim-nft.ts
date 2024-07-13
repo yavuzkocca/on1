@@ -12,7 +12,6 @@ import { useCurrentUserAddress } from "app/hooks/use-current-user-address";
 import { useSignTypedData } from "app/hooks/use-sign-typed-data";
 import { axios } from "app/lib/axios";
 import { Logger } from "app/lib/logger";
-import { captureException } from "app/lib/sentry";
 import { IEdition } from "app/types";
 import { getNextRefillClaim, ledgerWalletHack } from "app/utilities";
 
@@ -268,8 +267,6 @@ export const useClaimNFT = (edition: IEdition) => {
           "We are currently experiencing a lot of usage. Please try again in one hour!"
         );
       }
-
-      captureException(e);
     }
   };
   const gatedClaimFlow = async ({
